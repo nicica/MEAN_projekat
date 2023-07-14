@@ -1,0 +1,61 @@
+
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+        <h2>Sve agencije</h2>
+      </div>
+      
+    </header>
+<main class="content-container">
+<table>
+    <tr>
+        <td>
+            <input type="text" style=" width: 200px;" name="filter" [(ngModel)]="filter">
+            <label>
+                <input type="checkbox"  value=1 [(ngModel)]="byName">
+                Pretraga po imenu
+            </label>
+            <label>
+                <input type="checkbox"  value=2 [(ngModel)]="byAddr">
+                Pretraga po adresi
+            </label>
+            <button (click)="search()">Pretraga</button>
+        </td>
+    </tr>
+    <tr *ngIf="searched==1">
+        <td >
+            <br/>
+            Sortiranje:
+            <label>
+                <input type="checkbox"  value=1 [(ngModel)]="byNameS">
+                Po imenu
+            </label>
+            <label>
+                <input type="checkbox"  value=2 [(ngModel)]="byAddrS">
+                Po adresi
+            </label>
+            <select [(ngModel)]="selectedSortOrder">
+                <option value="asc">A-Z</option>
+                <option value="desc">Z-A</option>
+              </select>
+            <button (click)="sort()">Sortiraj</button>
+        </td>
+    </tr>
+</table>
+
+<div *ngFor="let agencija of agencije">
+    <img src={{agencija.pic}} (click)="redirectToAgencija(agencija)">
+  <h3>{{ agencija.aName }}</h3>
+  <p>{{ agencija.desc }}</p>
+</div>
+<button (click)="back()">Nazad</button>
+<br/>
+<button  *ngIf="user!=null"  (click)="logout()">Odjavite se</button>
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>

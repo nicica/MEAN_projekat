@@ -1,0 +1,167 @@
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+      </div>
+    </header>
+<main >
+
+<table *ngIf="phase==0">
+    Unesite podatke
+    <br/>
+    <tr>
+        <td>Tip objekta:</td>
+        <td>
+        <label>
+            <input type="radio" name="option" value="stan" [(ngModel)]="tip">
+            Stan
+        </label>
+        <label>
+            <input type="radio" name="option" value="kuca"[(ngModel)]="tip">
+            Kuća
+        </label>
+    </td>
+    </tr>
+    <tr>
+        <td>Adresa objekta:</td>
+        <td>
+            <input type="text" name="adresa" [(ngModel)]="address">
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <label>
+            <input type="radio" name="new" value="new" [(ngModel)]="tipFILE" checked>
+            Nova skica
+        </label>
+        <label>
+            <input type="radio" name="exists" value="exists"[(ngModel)]="tipFILE">
+            Postojeca
+        </label>
+    </tr>
+    <tr *ngIf="tipFILE=='new'">
+        <td>Broj prostorija:</td>
+        <td>
+            <input type="number" name="numR" [(ngModel)]="numR"> 
+        </td>
+    </tr>
+    <tr *ngIf="tipFILE=='new'">
+        <td>Kvadratura:</td>
+        <td>
+            <input type="number" name="size" [(ngModel)]="size"> 
+        </td>
+    </tr>
+    <tr *ngIf="tipFILE=='exists'">
+        <td>Izaberite JSON fajl:</td>
+        <td>
+            <input type="file" (change)="onFileSelected($event)"> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="dalje()">Dalje</button> 
+        </td>
+    </tr>
+</table>
+<div *ngIf="phase==1 && tipFILE=='new'">
+    <td>Izaberite:</td>
+        <td>
+        <label>
+            <input type="radio" name="option1" value="skica" [(ngModel)]="tipS" (click)="draw()" >
+            Kreiraj skicu
+        </label>
+        <label>
+            <input type="radio" name="option2" value="auto" [(ngModel)]="tipS" (click)="loadSkica()">
+            Ucitaj automatski
+        </label>
+    </td>
+</div>
+<div *ngIf="phase==1">
+    <canvas class="my-canvas" #canvas width="800" height="400" (click)="onClick($event)"></canvas>
+</div>
+
+<table *ngIf="phase==1 && tipS=='skica'">
+    Kreiranje skice objekta
+    <br/>
+    <tr>
+        <td>Dimenzije sobe (visina, sirina):
+            <input type="number" name="height" [(ngModel)]="h"> 
+            <input type="number" name="width" [(ngModel)]="w"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Izaberite sta zelite sad da radite</td>
+    </tr>
+    <tr>
+        <td>
+        <label>
+            <input type="radio" name="option" value="Dodavanje prostorija" [(ngModel)]="editingPhase" checked>
+            Dodavanje prostorija
+        </label>
+        <label>
+            <input type="radio" name="option" value="Dodavanje vrata"[(ngModel)]="editingPhase">
+            Dodavanje vrata
+        </label>
+        <label>
+            <input type="radio" name="option" value="Premestanje"[(ngModel)]="editingPhase">
+            Premestanje
+        </label>
+    </td>
+    </tr>
+    <tr>
+        <br/>
+        Postavljenih soba: {{nextR}}/3
+        <br/>
+        Popunjeno kvadrata: {{curSize}}/{{size}}
+    </tr>
+    <tr>
+        <td>
+            <button (click)="prev()">Korak nazad</button> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="dalje()">Sacuvaj</button> 
+        </td>
+    </tr>
+</table>
+
+<table *ngIf="phase==1 && tipS=='auto'">
+
+    <tr>
+        <td>
+            <button (click)="prev()">Korak nazad</button> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="dalje()">Sacuvaj</button> 
+        </td>
+    </tr>
+
+</table>
+<div *ngIf="phase==1 && tipFILE=='exists'">
+    <button (click)="loadJSON()">Ucitaj skicu</button>
+</div>
+<div *ngIf="phase==1 && tipFILE=='exists'">
+    <button (click)="prev()">Korak nazad</button> 
+</div>
+<div *ngIf="phase==1 && tipFILE=='exists'">
+    <button (click)="dalje()">Sacuvaj</button> 
+</div>
+
+
+{{message}}
+<br/>
+<button (click)="back()">Nazad</button>
+<br/>
+<button (click)="logout()">Odjavite se</button>
+
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>
+    

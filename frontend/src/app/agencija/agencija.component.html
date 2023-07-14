@@ -1,0 +1,62 @@
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" >
+    </div>
+  </header>
+<main class="content-container">
+<h3>Dobrodošli nazad!</h3>
+<br/>
+<button (click)="showProfile()">Prikaz profila</button>
+<br/>
+<button (click)="editData()">Izmenite podatke</button>
+<br/>
+<button (click)="changePass()">Promenite lozinku</button>
+<br/>
+<button (click)="showPoslovi()">Moji poslovi</button>
+<br/>
+<button (click)="logout()">Odjavite se</button>
+
+<table class="bordered-table" *ngIf="zahPrikaz==true">
+    <thead>
+      <tr>
+        <br/>
+       <h4> Prikaz poslova:</h4>
+      </tr>
+      <tr>
+        <th>Objekat koji se sredjuje</th>
+        <th>Klijent</th>
+        <th>Status</th>
+        <th>Pocetak</th>
+        <th>Kraj i ponuda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let zahtev of poslovi">
+        <td>{{ zahtev.idObjekat }}</td>
+        <td>{{ zahtev.ownerUsr }}</td>
+        <td>{{ zahtev.phase }}</td>
+        <td>{{ zahtev.startDate | date:'yyyy-MM-dd' }}</td>
+        <td>{{ zahtev.endDate | date:'yyyy-MM-dd' }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <button *ngIf="zahtev.phase=='poslat'" (click)="prihvati(zahtev)">Prihvati</button>&nbsp;
+           <button *ngIf="zahtev.phase=='poslat'" (click)="odbij(zahtev)">Odbij</button>
+           <button *ngIf="zahtev.phase=='aktivan'" (click)="detalji(zahtev)">Detalji</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="ponuda">
+    <h4>Unesite novcanu nadoknadu:</h4>
+    <input type="number" name="nadoknada" [(ngModel)]="nadoknada">
+    <br/>
+    <button (click)="posalji()">Posalji</button>
+  </div>
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>
+    

@@ -1,0 +1,51 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  table th {
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+  
+  
+  .button {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  .row-red {
+    background-color: red;
+  }
+  
+  .row-green {
+    background-color: green;
+  }
+.regular{
+  background-color: #dddddd;
+}  
+footer {
+  margin-top: auto;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto; /* Pushes the logo to the right */
+}
+
+.logo img {
+  max-width: 100px; /* Adjust the size as needed */
+}

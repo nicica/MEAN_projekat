@@ -1,0 +1,82 @@
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+      </div>
+    </header>
+  <main class="content-container">
+<img src={{editAg.pic}}>
+<table>
+    <tr>
+        <td>Username:</td>
+        <td>
+            <input type="text" name="username" [(ngModel)]="editAg.username">
+        </td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td>
+            <input type="password" name="password" [(ngModel)]="editAg.password"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Confirm password:</td>
+        <td>
+            <input type="password" name="password2" [(ngModel)]="password2"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Kontakt telefon:</td>
+        <td>
+            <input type="text" name="phoneNum" [(ngModel)]="editAg.phoneNum"> 
+        </td>
+    </tr>
+    <tr>
+        <td>E-mail:</td>
+        <td>
+            <input type="text" style=" width: 300px;" name="email" [(ngModel)]="editAg.imejl"> 
+        </td>
+    </tr>
+   
+    <tr >
+        <td>Naziv agencije:</td>
+        <td>
+            <input type="text"  name="aName" [(ngModel)]="editAg.aName"> 
+        </td>
+    </tr>
+    <tr >
+        <td>Adresa sedišta agencije:</td>
+        <td>
+            <input type="text" style=" width: 300px;" name="address" [(ngModel)]="editAg.address"> 
+        </td>
+    </tr>
+    <tr >
+        <td>Matični broj agencije:</td>
+        <td>
+            <input type="text"  name="matNum" [(ngModel)]="editAg.matNum"> 
+        </td>
+    </tr>
+    <tr >
+        Kratak opis:
+        <td>
+            <textarea  style=" width: 300px; height: 100px;"  name="desc" [(ngModel)]="editAg.desc"></textarea> 
+        </td>
+    </tr>
+    <tr>
+        <input type="file" id="fileUpload" (change)="onFileSelected($event)" accept="image/*">
+    </tr>
+    <button *ngIf="dodavanje==true" (click)="izmeni()">Dodaj</button>
+    <button *ngIf="!dodavanje" (click)="izmeni()">Izmeni</button>
+    <br/>
+    <button (click)="nazad()">Nazad</button>
+
+</table>
+{{message}}
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>
+    

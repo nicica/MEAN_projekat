@@ -1,0 +1,201 @@
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" >
+    </div>
+  </header>
+<main class="content-container">
+<div *ngIf="user!=null">
+    <h3>Klijenti</h3>
+    
+        <table class="bordered-table">
+            <thead>
+            <tr>
+                <th>Korisnicko ime</th>
+                <th>Lozinka</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Imejl</th>
+                <th>Kontakt telefon</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usr of korisnici">
+                <td>{{ usr.username }}</td>
+                <td>{{ usr.password }}</td>
+                <td>{{usr.ime}}</td>
+                <td>{{ usr.prezime }}</td>
+                <td>{{ usr.imejl }}</td>
+                <td>{{ usr.phoneNum  }} </td>
+                <td>
+                    <button (click)="editUser(usr)">Izmeni podatke</button>
+                    <button (click)="obrisiKor(usr.username)" >Obrisi</button>
+                </td>
+              </tr>
+            </tbody>
+            <button (click)="editUser(null)">Dodaj novog korisnika</button>
+        
+
+    </table>
+    <h3>Agencije</h3>
+    <table class="bordered-table">
+
+        
+            <thead>
+            <tr>
+                <th>Korisnicko ime</th>
+                <th>Lozinka</th>
+                <th>Ime agencije</th>
+                <th>Adresa</th>
+                <th>Imejl</th>
+                <th>Kontakt telefon</th>
+                <th>Maticni broj</th>
+                <th>Opis</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usr of agencije">
+                <td>{{ usr.username }}</td>
+                <td>{{ usr.password }}</td>
+                <td>{{usr.aName}}</td>
+                <td>{{ usr.address }}</td>
+                <td>{{ usr.imejl }}</td>
+                <td>{{ usr.phoneNum  }} </td>
+                <td>{{ usr.matNum }}</td>
+                <td>{{ usr.desc  }} </td>
+                <td>
+                    <button (click)="editAgencija(usr)">Izmeni</button>
+                    <button (click)="obrisiAg(usr.username)">Obrisi</button>
+                </td>
+              </tr>
+            </tbody>
+            <button (click)="editAgencija(null)">Dodaj novu agenciju</button>
+        
+    </table>
+    <h3>Zahtevi za registraciju</h3>
+    <h4>Klijenti</h4>
+    <table class="bordered-table">
+        <thead>
+            <tr>
+                <th>Korisnicko ime</th>
+                <th>Lozinka</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Imejl</th>
+                <th>Kontakt telefon</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usr of zahUsers">
+                <td>{{ usr.username }}</td>
+                <td>{{ usr.password }}</td>
+                <td>{{usr.ime}}</td>
+                <td>{{ usr.prezime }}</td>
+                <td>{{ usr.imejl }}</td>
+                <td>{{ usr.phoneNum  }} </td>
+                <td>
+                    <button (click)="prihvatiKor(usr.username)">Prihvati</button>
+                    <button (click)="odbijKor(usr.username)">Odbij</button>
+                </td>
+              </tr>
+            </tbody>
+    </table>
+    <h4>Agencije</h4>
+    <table class="bordered-table">
+        <thead>
+            <tr>
+                <th>Korisnicko ime</th>
+                <th>Lozinka</th>
+                <th>Ime agencije</th>
+                <th>Adresa</th>
+                <th>Imejl</th>
+                <th>Kontakt telefon</th>
+                <th>Maticni broj</th>
+                <th>Opis</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usr of zahAgencije">
+                <td>{{ usr.username }}</td>
+                <td>{{ usr.password }}</td>
+                <td>{{usr.aName}}</td>
+                <td>{{ usr.address }}</td>
+                <td>{{ usr.imejl }}</td>
+                <td>{{ usr.phoneNum  }} </td>
+                <td>{{ usr.matNum }}</td>
+                <td>{{ usr.desc  }} </td>
+                <td>
+                  <td>
+                    <button (click)="prihvatiAg(usr.username)">Prihvati</button>
+                    <button (click)="odbijAg(usr.username)">Odbij</button>
+                </td>
+                
+              </tr>
+            </tbody>
+        
+    </table>
+    <h3>Poslovi</h3>
+    <table class="bordered-table">
+        <thead>
+        <tr>
+            <th>Objekat koji se sredjuje</th>
+            <th>Agencija</th>
+            <th>Poslao korisnik</th>
+            <th>Status</th>
+            <th>Pocetak</th>
+            <th>Kraj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let zahtev of poslovi">
+            <td>{{ zahtev.idObjekat }}</td>
+            <td>{{ zahtev.agencyName }}</td>
+            <td>{{zahtev.ownerUsr}}</td>
+            <td>{{ zahtev.phase }}</td>
+            <td>{{ zahtev.startDate | date:'yyyy-MM-dd' }}</td>
+            <td>{{ zahtev.endDate | date:'yyyy-MM-dd' }} </td>
+          </tr>
+        </tbody>
+        
+    </table>
+    <h3>Zahtevi za otkazivanjem</h3>
+    
+    <table class="bordered-table">
+        <thead>
+        <tr>
+            <th>Id posla</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ot of orkazi">
+            <td>{{ ot.idPosla }}</td>
+            <td *ngIf="ot.prihvacen==null">
+                <button (click)="odgovor(true,ot)">Prihvati</button>
+                <button (click)="odgovor(false,ot)" >Odbij</button>
+            </td>
+            <td *ngIf="ot.prihvacen==true">
+              Prihvacen
+          </td>
+          <td *ngIf="ot.prihvacen==false">
+            Odbijen
+        </td>
+          </tr>
+        </tbody>
+    
+
+</table>
+
+    <br/><br/><br/>
+    <button (click)="logout()" >Logout</button>
+    </div>
+    <footer>
+      <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+    </footer>
+    
+    
+   

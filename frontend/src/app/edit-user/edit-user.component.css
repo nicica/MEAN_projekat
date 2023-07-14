@@ -1,0 +1,23 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set minimum height to full viewport height */
+  }
+  
+  /* Push the footer to the bottom */
+  footer {
+    margin-top: auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: auto; /* Pushes the logo to the right */
+  }
+  
+  .logo img {
+    max-width: 100px; /* Adjust the size as needed */
+  }
+  

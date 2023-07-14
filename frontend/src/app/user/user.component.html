@@ -1,0 +1,136 @@
+
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" >
+    </div>
+  </header>
+
+<main class="content-container">
+<h3> Dobrodošli nazad, {{user.ime}}</h3>
+<button (click)="showProfile()">Prikaz profila</button>
+<br/>
+<button (click)="editData()">Izmenite podatke</button>
+<br/>
+<button (click)="showAgencije()">Prikaz svih agencija</button>
+<br/>
+<button (click)="showObjekti()">Moji Objekti</button>
+<br/>
+<button (click)="newObjekat()">Kreiraj novi objekat</button>
+<br/>
+<button (click)="showPoslovi()">Moji poslovi</button>
+<br/>
+<button (click)="showFormaZaNoviPosao()">Prikazi formu za novi posao</button>
+<br/>
+<button (click)="changePass()">Promenite lozinku</button>
+<br/>
+<button (click)="logout()">Odjavite se</button>
+
+<table class="bordered-table" *ngIf="prikaz">
+    <thead>
+      <tr>
+        <th>Tip</th>
+        <th>Adresa</th>
+        <th>Broj soba</th>
+        <th>Velicina (u m<sup>2</sup> )</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let objekat of objekti">
+        <td>{{ objekat.tip }}</td>
+        <td>{{ objekat.address }}</td>
+        <td>{{ objekat.numR }}</td>
+        <td>{{ objekat.size }}</td>
+        <td>
+          <button class="button"  (click)="izmeni(objekat)">Izmeni</button>
+          <button class="button" (click)="preview(objekat)">Preview</button>
+          <button class="button" (click)="delete(objekat)">Obrisi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="bordered-table" *ngIf="zahPrikaz==true">
+    <thead>
+      <tr>
+        <br/>
+       <h4> Prikaz poslova:</h4>
+            <label>
+                <input type="radio" name="waiting" value=1 [(ngModel)]="faza">
+                Zahtevi za saradnju
+            </label>
+            <label>
+              <input type="radio" name="active" value=2 [(ngModel)]="faza">
+              Aktivni
+          </label>
+            <label>
+                <input type="radio" name="done" value=3 [(ngModel)]="faza">
+                Zavrseni
+            </label>
+            <button (click)="filter()">Filtriraj</button>
+      </tr>
+      <tr>
+        <th>Objekat koji se sredjuje</th>
+        <th>Agencija</th>
+        <th>Status</th>
+        <th>Pocetak</th>
+        <th>Kraj i ponuda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let zahtev of zahtevi" [ngClass]="{'row-red': zahtev.phase === 'odbijen', 'row-green': zahtev.phase === 'prihvacen'}">
+        <td>{{ zahtev.idObjekat }}</td>
+        <td>{{ zahtev.agencyName }}</td>
+        <td>{{ zahtev.phase }}</td>
+        <td>{{ zahtev.startDate | date:'yyyy-MM-dd' }}</td>
+        <td>{{ zahtev.endDate | date:'yyyy-MM-dd' }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <button *ngIf="zahtev.phase=='prihvacen'" (click)="ponuda(zahtev)">Pregledaj ponudu</button>
+           <button *ngIf="zahtev.phase=='zavrsen' && !zahtev.placen" (click)="placanje(zahtev)">Zavrsetak i placanje</button>
+           <button *ngIf="zahtev.phase=='zavrsen' && zahtev.placen" (click)="placanje(zahtev)">Pregled/promena ocene i komentara</button>
+          </td>
+          <td *ngIf="zahtev.phase=='aktivan'">
+              <button (click)="prikaziStanje(zahtev.idObjekat,zahtev)">Prikazi stanje</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="novPosao">
+    <h4>Forma za novi posao</h4>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="agencija">Agencija:</label>
+        <select id="agencija" name="agencija" [(ngModel)]="selectedAgencija" (change)="onChangeAgencija($event)">
+          <option *ngFor="let agencija of agencije" [value]="agencija">{{ agencija.aName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate">
+      </div>
+      <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate">
+      </div>
+      <div>
+        <label for="objekat">Objekat:</label>
+        <select id="objekat" name="objekat" [(ngModel)]="selectedObjekat" (change)="onChangeObjekat($event)">
+          <option *ngFor="let objekat of objekti" [value]="objekat">{{ objekat.tip }} ; {{ objekat.address }} ; {{ objekat.numR }} ; {{ objekat.size }}</option>
+        </select>
+      </div>
+      <button type="submit">Posalji zahtev</button>
+    </form>
+  </div>
+  <br/>
+  {{message}}
+
+</main>
+<footer>
+  <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+</footer>
+
+
+</body>
+  

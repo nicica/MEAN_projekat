@@ -1,0 +1,18 @@
+
+  /* Push the footer to the bottom */
+  footer {
+    margin-top: bottom;
+  }
+  header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: auto; /* Pushes the logo to the right */
+  }
+  
+  .logo img {
+    max-width: 100px; /* Adjust the size as needed */
+  }
+  

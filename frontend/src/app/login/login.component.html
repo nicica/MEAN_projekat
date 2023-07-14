@@ -1,0 +1,50 @@
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+      </div>
+    </header>
+<main class="content-container">
+
+<table>
+    <tr>
+        <td>Username:</td>
+        <td>
+            <input type="text" name="username" [(ngModel)]="username">
+        </td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td>
+            <input type="password" name="password" [(ngModel)]="password"> 
+        </td>
+    </tr>
+    <tr>
+        <label>
+            <input type="radio" name="option" value="klijent" [(ngModel)]="tip">
+            Klijent
+        </label>
+        <label>
+            <input type="radio" name="option" value="agencija"[(ngModel)]="tip">
+            Agencija
+        </label>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="login()">Prijavite se</button>
+            <br/>
+            
+            <button (click)="register()">Napravite novi nalog</button>
+            <br/>
+            <button (click)="nonReg()">Nastavite izlogovani</button>
+        </td>
+    </tr>
+</table>
+{{message}}
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>

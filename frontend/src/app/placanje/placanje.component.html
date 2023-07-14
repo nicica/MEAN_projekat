@@ -1,0 +1,32 @@
+
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+      </div>
+    </header>
+<main class="content-container">
+<button (click)="plati()" [disabled]="posao.placen || placeno">Plati</button>
+<br/>
+{{message}}
+
+<br/>
+<table *ngIf="posao.placen || placeno">
+    <tr>
+    <input type="number" name="ocena" [(ngModel)]="ocena" [value]="ocena">
+</tr><tr>
+    <textarea name="komentar" [(ngModel)]="komentar">{{komentar}}</textarea>
+    </tr><tr>
+    <button (click)="ostaviOcenu()">Posalji</button>
+</tr>
+    </table>
+
+<button (click)="nazad()">Nazad</button>
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>
+    

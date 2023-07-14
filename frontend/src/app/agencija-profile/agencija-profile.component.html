@@ -1,0 +1,42 @@
+<body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.jpg" >
+      </div>
+    </header>
+<main class="content-container">
+<table>
+    <tr>
+        <img src={{user.pic}}>
+    </tr>
+    <tr>
+        <td>Naziv: {{user.aName}}</td>
+    </tr>
+    <tr>
+        <td>Adresa: {{user.address}}</td>
+    </tr>
+    <tr>
+        <td>O nama: {{user.desc}}</td>
+    </tr>
+    <tr>
+        <td>E-mail adresa: {{user.imejl}}</td>
+    </tr>
+    <tr>
+        <td>Kontakt telefon: {{user.phoneNum}}</td>
+    </tr>
+    <tr>
+        <button (click)="back()">Nazad</button>
+    </tr>
+    <tr>
+        <button (click)="logout()">Odjavite se</button>
+    </tr>
+
+</table>
+</main>
+<footer>
+    <p>&copy; 2023 Project by Andrija Nicić. All rights reserved.</p>
+  </footer>
+  
+  
+  </body>
+    
