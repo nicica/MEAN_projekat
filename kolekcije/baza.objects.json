@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "64a94f905bd969eaab97ed5b"
+  },
+  "tip": "kuca",
+  "address": "Jasam, jes, da 7789",
+  "numR": 3,
+  "owner": "asdf1",
+  "skica": "assets/skice/provera.json",
+  "__v": 0,
+  "size": 105
+},
+{
+  "_id": {
+    "$oid": "64a95c965bd969eaab97ed66"
+  },
+  "tip": "stan",
+  "address": "Sad, jes, da 33",
+  "numR": 2,
+  "size": 109,
+  "owner": "asdf1",
+  "skica": "assets/skice/e24d4890-70cd-42f2-8430-5aee57439098.json",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a96b875bd969eaab97ede3"
+  },
+  "tip": "kuca",
+  "address": "Jedan, Dva, Tri 198",
+  "numR": 2,
+  "size": 62.5,
+  "owner": "asdf1",
+  "skica": "assets/skice/9290fc79-e96d-4964-aeae-77271f70ed7a.json",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab2220b70658734953faf1"
+  },
+  "tip": "kuca",
+  "address": "Jasam, jes, da 7789",
+  "numR": 3,
+  "size": 105,
+  "owner": "asdf1",
+  "skica": "assets/skice/00df9cb3-b970-4d79-a063-09e359bf77ac.json",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab2354b70658734953faff"
+  },
+  "tip": "kuca",
+  "address": "DDD, ddd, ddd 2136",
+  "numR": 2,
+  "size": 62.5,
+  "owner": "asdf1",
+  "skica": "assets/skice/3b2c1f6d-344a-4d1d-b7b0-3f0d80c68927.json",
+  "__v": 0
+}]

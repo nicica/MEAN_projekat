@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "64a95d1f5bd969eaab97ed73"
+  },
+  "idObjekat": "64a95c965bd969eaab97ed66",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-07-21T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-08-05T00:00:00.000Z"
+  },
+  "phase": "otkazan",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": false,
+  "nadoknada": 25000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64aa9ab51dc96355b2156a8f"
+  },
+  "idObjekat": "64a94f905bd969eaab97ed5b",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-07-27T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-08-05T00:00:00.000Z"
+  },
+  "phase": "zavrsen",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": true,
+  "nadoknada": 335577,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64aa9acf1dc96355b2156a92"
+  },
+  "idObjekat": "64a96b875bd969eaab97ede3",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-08-05T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-08-23T00:00:00.000Z"
+  },
+  "phase": "prihvacen",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": false,
+  "nadoknada": 123456,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64aa9bd91dc96355b2156a95"
+  },
+  "idObjekat": "64a96b875bd969eaab97ede3",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-08-05T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-08-23T00:00:00.000Z"
+  },
+  "phase": "odbijen",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": false,
+  "nadoknada": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64aaa0131dc96355b2156b04"
+  },
+  "idObjekat": "64a95c965bd969eaab97ed66",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-07-15T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-07-28T00:00:00.000Z"
+  },
+  "phase": "odbijen",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": false,
+  "nadoknada": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab2235b70658734953faf9"
+  },
+  "idObjekat": "64a94f905bd969eaab97ed5b",
+  "agencyUsr": "BogdanRumun",
+  "startDate": {
+    "$date": "2023-07-19T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2023-07-29T00:00:00.000Z"
+  },
+  "phase": "poslat",
+  "agencyName": "A1A",
+  "ownerUsr": "asdf1",
+  "placen": false,
+  "nadoknada": null,
+  "__v": 0
+}]

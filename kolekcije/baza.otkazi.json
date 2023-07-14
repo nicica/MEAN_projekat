@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "64ab2a14501824c982711e89"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab2f605de1d4ee54bf2586"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab2f665de1d4ee54bf258b"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab30045de1d4ee54bf25a4"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab30075de1d4ee54bf25a9"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ab330e6f996a6b4eb62ade"
+  },
+  "idPosla": "64a95d1f5bd969eaab97ed73",
+  "prihvacen": true,
+  "__v": 0
+}]

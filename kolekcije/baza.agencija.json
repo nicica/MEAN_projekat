@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "6497709fb4a10f268bd98adb"
+  },
+  "username": "admin",
+  "password": "admin123",
+  "__v": 0,
+  "tip": "admin",
+  "odobren": true
+},
+{
+  "_id": {
+    "$oid": "649888f5769386c3a88cb113"
+  },
+  "username": "asdf1",
+  "password": "!Asdf123",
+  "phoneNum": "832923870",
+  "imejl": "testprojectmail28@gmail.com",
+  "ime": "adsdas",
+  "prezime": "adsdsa",
+  "tip": "klijent",
+  "pic": "assets/usrDefault.png",
+  "__v": 0,
+  "odobren": true
+},
+{
+  "_id": {
+    "$oid": "6498a3a80f165b32743869c9"
+  },
+  "username": "Gustavo",
+  "password": "maloJ@c1gus",
+  "imejl": "pollos.hermanos@gmail.com",
+  "aName": "Los Pollos Hermanos",
+  "address": "Nju Meksiko, Albukerki, Huan Tabo 6",
+  "matNum": "17992892",
+  "desc": "Pozdrav, moje ime je Gustavo, ali mozete me zvati Gas. Mi smo Los Pollos Hermanos i bavimo se prostorom ya restorane brze hrane",
+  "tip": "agencija",
+  "pic": "assets/pics/Gustavo_pic.png",
+  "__v": 0,
+  "odobren": true,
+  "phoneNum": "7392946739"
+},
+{
+  "_id": {
+    "$oid": "6498a4400f165b32743869cf"
+  },
+  "username": "BogdanRumun",
+  "password": "b0g0Md@n",
+  "imejl": "a1a@gmail.com",
+  "aName": "A1A",
+  "address": "Nju Meksiko, Albukerki, East Boulevard 6",
+  "matNum": "27898764",
+  "desc": "Povimo se prostorom za uredjivanjem auto-perionica",
+  "tip": "agencija",
+  "pic": "assets/pics/BogdanRumun_pic.png",
+  "__v": 0,
+  "odobren": true,
+  "phoneNum": "72836380"
+},
+{
+  "_id": {
+    "$oid": "6498a54f0f165b32743869d3"
+  },
+  "username": "ChrissyTheCapo",
+  "password": "pieched1!LE",
+  "imejl": "satriales@gmail.com",
+  "aName": "Satriale's",
+  "address": "Nju Dzersi, Severni Kalkvel, Northbound 88",
+  "matNum": "27973801",
+  "desc": "Dobra hrana.",
+  "tip": "agencija",
+  "pic": "assets/pics/ChrissyTheCapo_pic.png",
+  "__v": 0,
+  "odobren": true,
+  "phoneNum": "7292739339"
+},
+{
+  "_id": {
+    "$oid": "64a33e9bb8ac2c3780dce2e5"
+  },
+  "username": "tony",
+  "password": "G@bagul12",
+  "phoneNum": "32353422",
+  "imejl": "tonysoprano@mail.us",
+  "ime": "Tony",
+  "prezime": "Soprano",
+  "tip": "klijent",
+  "pic": "assets/pics/tony_pic.png",
+  "odobren": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a477fff11d53a1c7fd9c35"
+  },
+  "username": "novi",
+  "password": "n0v!Nal",
+  "phoneNum": "729936782",
+  "imejl": "ysjkskjn@ajid.com",
+  "ime": "Todor",
+  "prezime": "Todor",
+  "tip": "klijent",
+  "pic": "assets/usrDefault.png",
+  "odobren": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a5cd3d5c136e0e93d21f10"
+  },
+  "username": "jedan",
+  "password": "j3d@N11",
+  "phoneNum": "1782926728",
+  "imejl": "noviMejl@mejl.mejl",
+  "ime": "Mejl",
+  "prezime": "Mejlovic",
+  "tip": "klijent",
+  "pic": "assets/usrDefault.png",
+  "odobren": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a5d7ba6e269947116d8f58"
+  },
+  "username": "dva",
+  "password": "d00MER!",
+  "phoneNum": "182915555",
+  "imejl": "ja@ja.ja",
+  "ime": "Jasam",
+  "prezime": "Ja",
+  "tip": "klijent",
+  "pic": "assets/pics/dva_pic.png",
+  "odobren": true,
+  "__v": 0
+}]
